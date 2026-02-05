@@ -19,11 +19,15 @@
 
     <!-- Navegación -->
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="menu.html">Menú</a>
-        <a href="pedido.html">Pedido</a>
-        <a href="reserva.html">Reservas</a>
-        <a href="admin.html">Admin</a>
+        <ul class="menu-nav">
+
+            <li><a href="index.html">1. Inicio</a></li>
+            <li><a href="menu.html" class="activo">2. Menú</a></li>
+            <li><a href="pedido.html">3. Pedido</a></li>
+            <li><a href="reserva.html">4. Reservas</a></li>
+            <li><a href="admin.html">5. Admin</a></li>
+
+        </ul>
     </nav>
 
     <!-- Contenido -->
@@ -34,7 +38,7 @@
         <section class="formulario">
 
             <form>
-
+                <article class="card">
                 <!-- Nombre -->
                 <label>Nombre del cliente:</label>
                 <input type="text" placeholder="Ingrese su nombre">
@@ -48,6 +52,11 @@
                     <option>Pizza Pepperoni</option>
                     <option>Ensalada César</option>
                     <option>Brownie con Helado</option>
+                    <option>Arepitas de maíz con hogao</option>
+                    <option>Filete de res en salsa de vino tinto</option>
+                    <option>Arroz con leche</option>
+                    <option>Postre de tres leches</option>
+                    <option>Patacones con guacamole y suero costeño</option>
                 </select>
 
                 <br><br>
@@ -73,6 +82,7 @@
                 <!-- Botón -->
                 <button type="submit">Enviar Pedido</button>
 
+                </article>
             </form>
 
         </section>

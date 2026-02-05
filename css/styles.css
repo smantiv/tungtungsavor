@@ -13,7 +13,7 @@ body {
 ============================ */
 
 header {
-    background-color: #5dbab2;
+    background-color: #3cc571;
     color: white;
     text-align: center;
     padding: 25px;
@@ -25,6 +25,7 @@ header {
 
 nav {
     background-color: #333;
+    
 }
 
 .menu-nav {
@@ -49,12 +50,10 @@ nav {
 }
 
 .menu-nav a:hover {
-    background-color: #74197e;
+    background-color: #f3ebf4;
 }
 
-.menu-nav .activo {
-    background-color: #aa3c90;
-}
+
 
 /* ============================
    Contenido principal
@@ -78,6 +77,9 @@ main h2 {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
 }
+.categoria h2 {
+    text-align: left;
+}
 
 .card {
     background-color: white;
@@ -98,7 +100,7 @@ main h2 {
 
 .card h3 {
     margin-top: 0;
-    color: #56b9af;
+    color: #57cb70;
 }
 
 .precio {
@@ -112,7 +114,7 @@ main h2 {
 
 
 footer {
-    background-color: #7ab062;
+    background-color: #3cc571;
     color: white;
     text-align: center;
     padding: 15px;
