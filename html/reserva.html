@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Reactividad -->
+    <title>Reservas - TungTung Savor</title>
+
+    <!-- Enlace CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>TungTung Savor</h1>
+        <p>Reserva de Mesa</p>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="pedido.html">Pedido</a>
+        <a href="reserva.html">Reservas</a>
+    </nav>
+
+    <!-- Contenido -->
+    <main>
+
+        <h2>Formulario de Reserva</h2>
+
+        <section class="formulario">
+
+            <form>
+
+                <!-- Nombre -->
+                <label>Nombre del cliente:</label>
+                <input type="text" placeholder="Ingrese su nombre">
+
+                <br><br>
+
+                <!-- Número de personas -->
+                <label>Número de personas:</label>
+                <input type="number" min="1" max="20">
+
+                <br><br>
+
+                <!-- Edades -->
+                <label>Edades de las personas:</label>
+                <input type="text" placeholder="Ej: 20, 25, 30">
+
+                <br><br>
+
+                <!-- Tipo de evento -->
+                <label>Tipo de evento:</label>
+                <select>
+                    <option>Cumpleaños</option>
+                    <option>Evento de trabajo</option>
+                    <option>Evento familiar</option>
+                </select>
+
+                <br><br>
+
+                <!-- Fecha -->
+                <label>Fecha de la reserva:</label>
+                <input type="date">
+
+                <br><br>
+
+                <!-- Hora -->
+                <label>Hora:</label>
+                <input type="time">
+
+                <br><br>
+
+                <!-- Observaciones -->
+                <label>Observaciones:</label>
+                <textarea placeholder="Ej: Mesa cerca a la ventana, decoración especial..."></textarea>
+
+                <br><br>
+
+                <!-- Botón -->
+                <button type="submit">Reservar Mesa</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
