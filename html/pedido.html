@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pedido - TungTung Savor</title>
+
+    <!-- Enlace CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>TungTung Savor</h1>
+        <p>Realizar Pedido</p>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="menu.html">Menú</a>
+        <a href="pedido.html">Pedido</a>
+        <a href="reserva.html">Reservas</a>
+        <a href="admin.html">Admin</a>
+    </nav>
+
+    <!-- Contenido -->
+    <main>
+
+        <h2>Formulario de Pedido</h2>
+
+        <section class="formulario">
+
+            <form>
+
+                <!-- Nombre -->
+                <label>Nombre del cliente:</label>
+                <input type="text" placeholder="Ingrese su nombre">
+
+                <br><br>
+
+                <!-- Plato -->
+                <label>Seleccione el plato:</label>
+                <select>
+                    <option>Hamburguesa Especial</option>
+                    <option>Pizza Pepperoni</option>
+                    <option>Ensalada César</option>
+                    <option>Brownie con Helado</option>
+                </select>
+
+                <br><br>
+
+                <!-- Cantidad -->
+                <label>Cantidad:</label>
+                <input type="number" min="1" max="10" value="1">
+
+                <br><br>
+
+                <!-- Precio simulado -->
+                <label>Precio Total:</label>
+                <input type="text" value="$0" disabled>
+
+                <br><br>
+
+                <!-- Comentarios -->
+                <label>Observaciones:</label>
+                <textarea placeholder="Ej: Sin cebolla, extra salsa..."></textarea>
+
+                <br><br>
+
+                <!-- Botón -->
+                <button type="submit">Enviar Pedido</button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Pie -->
+    <footer>
+        <p>© 2026 TungTung Savor</p>
+    </footer>
+
+</body>
+</html>
