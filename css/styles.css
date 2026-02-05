@@ -13,7 +13,7 @@ body {
 ============================ */
 
 header {
-    background-color: #8B0000;
+    background-color: #5dbab2;
     color: white;
     text-align: center;
     padding: 25px;
@@ -49,11 +49,11 @@ nav {
 }
 
 .menu-nav a:hover {
-    background-color: #555;
+    background-color: #74197e;
 }
 
 .menu-nav .activo {
-    background-color: #8B0000;
+    background-color: #aa3c90;
 }
 
 /* ============================
@@ -98,7 +98,7 @@ main h2 {
 
 .card h3 {
     margin-top: 0;
-    color: #8B0000;
+    color: #56b9af;
 }
 
 .precio {
@@ -112,7 +112,7 @@ main h2 {
 
 
 footer {
-    background-color: #333;
+    background-color: #7ab062;
     color: white;
     text-align: center;
     padding: 15px;
