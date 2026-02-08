@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Reactividad -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas - TungTung Savor</title>
 
     <!-- Enlace CSS -->
@@ -19,10 +19,13 @@
 
     <!-- Navegación -->
     <nav>
-        <a href="index.html">Inicio</a>
-        <a href="menu.html">Menú</a>
-        <a href="pedido.html">Pedido</a>
-        <a href="reserva.html">Reservas</a>
+        <ul class="menu-nav">
+            <li><a href="index.html">1. Inicio</a></li>
+            <li><a href="menu.html">2. Menú</a></li>
+            <li><a href="pedido.html">3. Pedido</a></li>
+            <li><a href="reserva.html" class="activo">4. Reservas</a></li>
+            <li><a href="admin.html">5. Admin</a></li>
+        </ul>
     </nav>
 
     <!-- Contenido -->
@@ -31,30 +34,29 @@
         <h2>Formulario de Reserva</h2>
 
         <section class="formulario">
-
             <form>
 
                 <!-- Nombre -->
-                <label>Nombre del cliente:</label>
-                <input type="text" placeholder="Ingrese su nombre">
+                <label for="nombre">Nombre del cliente:</label>
+                <input type="text" id="nombre" placeholder="Ingrese su nombre">
 
                 <br><br>
 
                 <!-- Número de personas -->
-                <label>Número de personas:</label>
-                <input type="number" min="1" max="20">
+                <label for="personas">Número de personas:</label>
+                <input type="number" id="personas" min="1" max="20">
 
                 <br><br>
 
                 <!-- Edades -->
-                <label>Edades de las personas:</label>
-                <input type="text" placeholder="Ej: 20, 25, 30">
+                <label for="edades">Edades de las personas:</label>
+                <input type="text" id="edades" placeholder="Ej: 20, 25, 30">
 
                 <br><br>
 
                 <!-- Tipo de evento -->
-                <label>Tipo de evento:</label>
-                <select>
+                <label for="evento">Tipo de evento:</label>
+                <select id="evento">
                     <option>Cumpleaños</option>
                     <option>Evento de trabajo</option>
                     <option>Evento familiar</option>
@@ -63,20 +65,20 @@
                 <br><br>
 
                 <!-- Fecha -->
-                <label>Fecha de la reserva:</label>
-                <input type="date">
+                <label for="fecha">Fecha de la reserva:</label>
+                <input type="date" id="fecha">
 
                 <br><br>
 
                 <!-- Hora -->
-                <label>Hora:</label>
-                <input type="time">
+                <label for="hora">Hora:</label>
+                <input type="time" id="hora">
 
                 <br><br>
 
                 <!-- Observaciones -->
-                <label>Observaciones:</label>
-                <textarea placeholder="Ej: Mesa cerca a la ventana, decoración especial..."></textarea>
+                <label for="obs">Observaciones:</label>
+                <textarea id="obs" placeholder="Ej: Mesa cerca a la ventana, decoración especial..."></textarea>
 
                 <br><br>
 
@@ -84,7 +86,6 @@
                 <button type="submit">Reservar Mesa</button>
 
             </form>
-
         </section>
 
     </main>
@@ -96,3 +97,4 @@
 
 </body>
 </html>
+
