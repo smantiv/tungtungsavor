@@ -1,135 +1,140 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Menú - TungTung Savor</title>
+  <meta charset="UTF-8" />
+  <title>Menú - TungTung Savor</title>
 
-    <!-- Enlace CSS -->
-    <link rel="stylesheet" href="../css/styles.css">
+  <!-- Enlace CSS -->
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body>
 
-    <!-- Encabezado -->
-    <header>
-        <h1>TungTung Savor</h1>
-        <p>Menú Digital</p>
-    </header>
+  <!-- Encabezado -->
+  <header>
+    <h1>TungTung Savor</h1>
+    <p>Menú Digital</p>
+  </header>
 
-    <!-- Navegación -->
-    <nav>
-        <ul class="menu-nav">
+  <!-- Navegación -->
+  <nav>
+    <ul class="menu-nav">
+      <li><a href="index.html">1. Inicio</a></li>
+      <li><a href="menu.html" class="activo">2. Menú</a></li>
+      <li><a href="pedido.html">3. Pedido</a></li>
+      <li><a href="reserva.html">4. Reservas</a></li>
+      <li><a href="admin.html">5. Admin</a></li>
+    </ul>
+  </nav>
 
-            <li><a href="index.html">1. Inicio</a></li>
-            <li><a href="menu.html" class="activo">2. Menú</a></li>
-            <li><a href="pedido.html">3. Pedido</a></li>
-            <li><a href="reserva.html">4. Reservas</a></li>
-            <li><a href="admin.html">5. Admin</a></li>
+  <!-- Contenido principal -->
+  <main>
 
-        </ul>
-    </nav>
+    <h2>Nuestros Platos</h2>
 
-    <!-- Contenido principal -->
-    <main>
+    <!-- ENTRADAS -->
+    <section class="categoria">
+      <h2>Entradas</h2>
 
-        <h2>Nuestros Platos</h2>
+      <div class="menu-cards">
+        <article class="card">
+          <h3>Ensalada César</h3>
+          <p>Lechuga, pollo, crutones y aderezo.</p>
+          <p class="precio">$12.000</p>
+          <img src="../img/ensaladaCesar.jpg" alt="Ensalada César" width="240" height="180" />
+        </article>
 
-         <!-- Card 1 -->
-             <section class="categoria">
-            <h2>Entrada</h2>
-            <article class="card">
-                <h3>Ensalada César</h3> 
-                <p>Lechuga, pollo, crutones y aderezo.</p>
-                <p class="precio">$12.000</p>
-                <img src="../img/ensaladaCesar.jpg" alt="Ensalada César" width="240" height="180">
-            </article>
+        <article class="card">
+          <h3>Arepitas de maíz con hogao</h3>
+          <p>
+            Arepitas doradas por fuera y suaves por dentro, elaboradas con maíz tradicional,
+            acompañadas de hogao casero a base de tomate, cebolla larga y especias. Un clásico
+            lleno de sabor colombiano.
+          </p>
+          <p class="precio">$20.000</p>
+          <img src="../img/arepitashogao.webp" alt="Arepitas de maíz con hogao" width="240" height="180" />
+        </article>
 
-            <section class="categoria">
-            <div class="menu-cards">
-            <article class="card">
-                <h3>Arepitas de maíz con hogao</h3>
-                <p>Arepitas doradas por fuera y suaves por dentro, elaboradas con maíz tradicional, acompañadas de hogao casero a base de tomate, cebolla larga y especias. Un clásico lleno de sabor colombiano..</p>
-                <p class="precio">$20.000</p>
-                <img src="../img/arepitashogao.webp" alt="Arepitas de maíz con hogao" width="240" height="180">
-            
-            </div>
-            </article>
+        <article class="card">
+          <h3>Patacones con guacamole y suero costeño</h3>
+          <p>
+            Patacones crujientes, acompañados de guacamole fresco y suero costeño. Un plato
+            tradicional lleno de sabor y textura.
+          </p>
+          <p class="precio">$25.000</p>
+          <img src="../img/patacones.jpg" alt="Patacones con guacamole y suero costeño" width="240" height="180" />
+        </article>
+      </div>
+    </section>
 
-            <section class="categoria">
-            <div class="menu-cards">
-            <article class="card">
-                <h3>Patacones con guacamole y suero costeño</h3>
-                <p>Patacones crujientes, acompañados de guacamole fresco y suero costeño. Un plato tradicional lleno de sabor y textura.</p>
-                <p class="precio">$25.000</p>
-                <img src="../img/patacones.jpg" alt="Patacones con guacamole y suero costeño" width="240" height="180">
-            
-            </div>
-            </article>
+    <!-- PLATOS FUERTES -->
+    <section class="categoria">
+      <h2>Platos fuertes</h2>
 
-             <section class="categoria">
-            <h2>Platos fuertes</h2>
-            <div class="menu-cards">
-            <article class="card">
-                <h3>Hamburguesa Especial</h3>
-                <p>Carne premium, queso, papas y salsa especial.</p>
-                <p class="precio">$18.000</p>
-                <img src="../img/hamburguesa.jpg" alt="Hamburguesa Especial" width="240" height="180">
-            
-            </div>
-            </article>
-            
-            <!-- Card 2 -->
-            <article class="card">
-                <h3>Pizza Pepperoni</h3>
-                <p>Pizza artesanal con pepperoni y queso.</p>
-                <p class="precio">$22.000</p>
-                <img src="../img/peperoni.webp" alt="peperoni" width="240" height="180">
+      <div class="menu-cards">
+        <article class="card">
+          <h3>Hamburguesa Especial</h3>
+          <p>Carne premium, queso, papas y salsa especial.</p>
+          <p class="precio">$18.000</p>
+          <img src="../img/hamburguesa.jpg" alt="Hamburguesa Especial" width="240" height="180" />
+        </article>
 
-            </article>
+        <article class="card">
+          <h3>Pizza Pepperoni</h3>
+          <p>Pizza artesanal con pepperoni y queso.</p>
+          <p class="precio">$22.000</p>
+          <img src="../img/peperoni.webp" alt="Pizza Pepperoni" width="240" height="180" />
+        </article>
 
-            <!-- Card 3 -->
-            <article class="card">
-                <h3>Filete de res en salsa de vino tinto</h3>
-                <p>Filete de res sellado a la perfección, bañado en una suave salsa de vino tinto con notas de ajo y hierbas aromáticas. Acompañado de puré de papa cremoso y vegetales salteado.</p>
-                <p class="precio">$50.000</p>
-                <img src="../img/fileteRes.jpg" alt="Filete de res en salsa de vino tinto" width="240" height="180">
+        <article class="card">
+          <h3>Filete de res en salsa de vino tinto</h3>
+          <p>
+            Filete de res sellado a la perfección, bañado en una suave salsa de vino tinto con
+            notas de ajo y hierbas aromáticas. Acompañado de puré de papa cremoso y vegetales
+            salteados.
+          </p>
+          <p class="precio">$50.000</p>
+          <img src="../img/fileteRes.jpg" alt="Filete de res en salsa de vino tinto" width="240" height="180" />
+        </article>
+      </div>
+    </section>
 
-            </article>
+    <!-- POSTRES -->
+    <section class="categoria">
+      <h2>Postres</h2>
 
+      <div class="menu-cards">
+        <article class="card">
+          <h3>Brownie con Helado</h3>
+          <p>Brownie caliente con helado de vainilla.</p>
+          <p class="precio">$9.000</p>
+          <img src="../img/brownieHelado.webp" alt="Brownie con Helado" width="240" height="180" />
+        </article>
 
-            <!-- Card 3 -->
-             <h2>Postres</h2>
-            <article class="card">
-                <h3>Brownie con Helado</h3>
-                <p>Brownie caliente con helado de vainilla.</p>
-                <p class="precio">$9.000</p>
-                <img src="../img/brownieHelado.webp" alt="Brownie con Helado" width="240" height="180">
-            </article>
+        <article class="card">
+          <h3>Postre de tres leches</h3>
+          <p>Postre tradicional colombiano con tres tipos de leche, esponjoso y muy delicioso.</p>
+          <p class="precio">$14.000</p>
+          <img src="../img/tresleches.jpg" alt="Postre de tres leches" width="240" height="180" />
+        </article>
 
-            <article class="card">
-                <h3>Postre de tres leches</h3>
-                <p>Postre tradicional colombiano con tres tipos de leche, esponjoso y muy delicioso.</p>
-                <p class="precio">$14.000</p>
-                <img src="../img/tresleches.jpg" alt="Postre de tres leches" width="240" height="180">
-            </article>
+        <article class="card">
+          <h3>Arroz con leche</h3>
+          <p>Arroz cocido con leche, azúcar y canela. Un postre tradicional y muy delicioso.</p>
+          <p class="precio">$8.000</p>
+          <img src="../img/arrozconleche.jpg" alt="Arroz con leche" width="240" height="180" />
+        </article>
+      </div>
+    </section>
 
-             <article class="card">
-                <h3>Arroz con leche</h3>
-                <p>Arroz cocido con leche, azúcar y canela. Un postre tradicional y muy delicioso.</p>
-                <p class="precio">$8.000</p>
-                <img src="../img/arrozconleche.jpg" alt="Arroz con leche" width="240" height="180">
-            </article>
+  </main>
 
-       
-
-    </main>
-
-    <!-- Pie de página -->
-    <footer>
-        <p>© 2026 TungTung Savor</p>
-        <p>Proyecto Académico - Ingeniería de Sistemas</p>
-    </footer>
+  <!-- Pie de página -->
+  <footer>
+    <p>© 2026 TungTung Savor</p>
+    <p>Proyecto Académico - Ingeniería de Sistemas</p>
+  </footer>
 
 </body>
 </html>
+

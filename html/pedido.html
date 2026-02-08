@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Pedido - TungTung Savor</title>
@@ -20,13 +19,11 @@
     <!-- Navegación -->
     <nav>
         <ul class="menu-nav">
-
             <li><a href="index.html">1. Inicio</a></li>
-            <li><a href="menu.html" class="activo">2. Menú</a></li>
-            <li><a href="pedido.html">3. Pedido</a></li>
+            <li><a href="menu.html">2. Menú</a></li>
+            <li><a href="pedido.html" class="activo">3. Pedido</a></li>
             <li><a href="reserva.html">4. Reservas</a></li>
             <li><a href="admin.html">5. Admin</a></li>
-
         </ul>
     </nav>
 
@@ -36,55 +33,56 @@
         <h2>Formulario de Pedido</h2>
 
         <section class="formulario">
-
             <form>
+
                 <article class="card">
-                <!-- Nombre -->
-                <label>Nombre del cliente:</label>
-                <input type="text" placeholder="Ingrese su nombre">
 
-                <br><br>
+                    <!-- Nombre -->
+                    <label for="nombre">Nombre del cliente:</label>
+                    <input type="text" id="nombre" placeholder="Ingrese su nombre">
 
-                <!-- Plato -->
-                <label>Seleccione el plato:</label>
-                <select>
-                    <option>Hamburguesa Especial</option>
-                    <option>Pizza Pepperoni</option>
-                    <option>Ensalada César</option>
-                    <option>Brownie con Helado</option>
-                    <option>Arepitas de maíz con hogao</option>
-                    <option>Filete de res en salsa de vino tinto</option>
-                    <option>Arroz con leche</option>
-                    <option>Postre de tres leches</option>
-                    <option>Patacones con guacamole y suero costeño</option>
-                </select>
+                    <br><br>
 
-                <br><br>
+                    <!-- Plato -->
+                    <label for="plato">Seleccione el plato:</label>
+                    <select id="plato">
+                        <option>Hamburguesa Especial</option>
+                        <option>Pizza Pepperoni</option>
+                        <option>Ensalada César</option>
+                        <option>Brownie con Helado</option>
+                        <option>Arepitas de maíz con hogao</option>
+                        <option>Filete de res en salsa de vino tinto</option>
+                        <option>Arroz con leche</option>
+                        <option>Postre de tres leches</option>
+                        <option>Patacones con guacamole y suero costeño</option>
+                    </select>
 
-                <!-- Cantidad -->
-                <label>Cantidad:</label>
-                <input type="number" min="1" max="10" value="1">
+                    <br><br>
 
-                <br><br>
+                    <!-- Cantidad -->
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" min="1" max="10" value="1">
 
-                <!-- Precio simulado -->
-                <label>Precio Total:</label>
-                <input type="text" value="$0" disabled>
+                    <br><br>
 
-                <br><br>
+                    <!-- Precio simulado -->
+                    <label for="precio">Precio Total:</label>
+                    <input type="text" id="precio" value="$0" disabled>
 
-                <!-- Comentarios -->
-                <label>Observaciones:</label>
-                <textarea placeholder="Ej: Sin cebolla, extra salsa..."></textarea>
+                    <br><br>
 
-                <br><br>
+                    <!-- Comentarios -->
+                    <label for="obs">Observaciones:</label>
+                    <textarea id="obs" placeholder="Ej: Sin cebolla, extra salsa..."></textarea>
 
-                <!-- Botón -->
-                <button type="submit">Enviar Pedido</button>
+                    <br><br>
+
+                    <!-- Botón -->
+                    <button type="submit">Enviar Pedido</button>
 
                 </article>
-            </form>
 
+            </form>
         </section>
 
     </main>
@@ -96,3 +94,4 @@
 
 </body>
 </html>
+
