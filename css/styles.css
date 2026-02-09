@@ -57,15 +57,16 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  height: 40px;      /* altura visible en navbar */
+  height: 80px;        /* alto real de navbar */
   overflow: hidden;  /* recorta espacio muerto */
 }
 
 .logo img {
-  height: 200px;     /* más grande que el contenedor (se recorta) */
+  height: 140px;       /* grande a propósito */
   width: auto;
   display: block;
   object-fit: contain;
+  transform: translateY(+10px); 
 }
 
 .menu-nav {
@@ -461,7 +462,107 @@ footer,
   margin-top: 20px; 
 }
 
-  
+/* ============================
+   ROLE SELECT (rol.html) - AISLADO
+============================ */
+.role-page{
+  max-width: 1100px;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.role-section{
+  width: 100%;
+  text-align: center;
+}
+
+.role-title{
+  font-family: var(--font-display);
+  text-align: center;
+  color: var(--rojo-oscuro);
+  margin: 10px 0 6px;
+  font-size: 2.2rem;
+}
+
+.role-subtitle{
+  text-align: center;
+  margin: 0 0 26px;
+  opacity: 0.75;
+}
+
+.role-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.role-card{
+  background: var(--blanco);
+  border: 2px solid rgba(122, 12, 12, 0.15);
+  border-radius: 18px;
+  padding: 22px;
+  text-decoration: none;
+  color: var(--cafe-oscuro);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.25s, border-color 0.25s;
+  text-align: center;
+}
+
+.role-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(241, 90, 36, 0.45);
+}
+
+.role-icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  background: rgba(255, 200, 61, 0.25);
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.role-card h3{
+  font-family: var(--font-subtitle);
+  color: var(--naranja);
+  margin: 10px 0 6px;
+}
+
+.role-badge{
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: var(--amarillo);
+  color: var(--cafe-oscuro);
+  font-weight: 700;
+}
+
+/* responsive */
+@media (max-width: 900px){
+  .role-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px){
+  .role-grid{ grid-template-columns: 1fr; }
+}
+
+.role-layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.role-layout main{
+  flex: 1;                 /* ocupa el espacio entre nav y footer */
+  display: flex;
+  align-items: center;     /* CENTRO VERTICAL */
+  justify-content: center
+}
+
+
   
 
   
