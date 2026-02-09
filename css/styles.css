@@ -43,13 +43,38 @@ nav {
   background-color: var(--rojo-oscuro);
 }
 
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Logo con recorte (por espacio transparente del PNG) */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 48px;      /* altura visible en navbar */
+  overflow: hidden;  /* recorta espacio muerto */
+}
+
+.logo img {
+  height: 140px;     /* más grande que el contenedor (se recorta) */
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
 .menu-nav {
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 14px;
-  padding: 12px 0;
+  padding: 6px 0;
   margin: 0;
 }
 
@@ -73,8 +98,31 @@ nav {
   color: var(--blanco);
 }
 
+/* Ícono de perfil (SVG) */
+.profile-icon {
+  color: var(--blanco);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.profile-icon:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: scale(1.05);
+}
+
+.profile-icon .icon {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
 /* ============================
-   HEADER
+   HEADER (para páginas internas)
 ============================ */
 header {
   background-color: var(--rojo-oscuro);
@@ -103,7 +151,7 @@ header p {
   min-height: 70vh;
   display: flex;
   align-items: center;
-  padding: 120px 20px 70px;
+  padding: 90px 20px 60px;
   background-image: url("../img/hero.jpg");
   background-size: cover;
   background-position: center;
@@ -179,7 +227,7 @@ header p {
 }
 
 .btn-ghost:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* ============================
@@ -216,7 +264,7 @@ main h2 {
   border-radius: 18px;
   padding: 22px;
   border: 2px solid rgba(122, 12, 12, 0.15);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s;
 }
 
@@ -318,5 +366,58 @@ footer,
     flex-wrap: wrap;
   }
 }
+
+/* ============================
+   NAV TRANSPARENTE SOLO EN INDEX
+============================ */
+
+/* El nav se posiciona encima del hero */
+.top-nav.nav-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: 200;
+  }
+  
+  /* El hero baja su contenido para que no lo tape el nav */
+  .top-nav.nav-hero + .hero {
+    padding-top: 150px;
+  }
+  
+  /* Links blancos en modo hero */
+  .top-nav.nav-hero .menu-nav a,
+  .top-nav.nav-hero .profile-icon {
+    color: var(--blanco);
+  }
+  
+  /* Hover y activo en modo hero */
+  .top-nav.nav-hero .menu-nav a:hover {
+    background-color: rgba(255, 200, 61, 0.95);
+    color: var(--cafe-oscuro);
+  }
+  
+  .top-nav.nav-hero .menu-nav a.activo {
+    background-color: rgba(241, 90, 36, 0.95);
+    color: var(--blanco);
+  }
+  
+  /* Logo más grande SOLO en index */
+  .top-nav.nav-hero .logo {
+    height: 56px;
+    overflow: hidden;
+  }
+  
+  .top-nav.nav-hero .logo img {
+    height: 110px;
+  }
+
+  /* Ajuste fino: bajar un poco el logo en el nav del hero */
+.top-nav.nav-hero .logo {
+    margin-top: 8px;   /* prueba 6px–10px según gusto */
+  }
+  
+  
 
   
