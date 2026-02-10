@@ -53,31 +53,60 @@ nav {
   gap: 16px;
 }
 
+.nav-container.central {
+  flex-direction: column; /* Apila logo arriba y enlaces abajo */
+  padding: 20px 16px;
+  gap: 10px;
+}
+
+.nav-logo-row {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Centra el logo */
+  position: relative;     /* Para que el icono de perfil se mueva respecto a esto */
+}
+
+.logo-center img {
+  height: 120px; /* Ajusta el tamaño de logofull.png a tu gusto */
+  width: auto;
+  display: block;
+  margin-bottom: -30px;
+}
+
+.menu-nav {
+  max-width: 1200px;
+  list-style: none;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 150px;
+}
+
+.profile-icon.right-side {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 /* Logo con recorte (por espacio transparente del PNG) */
 .logo {
   display: flex;
   align-items: center;
-  height: 80px;        /* alto real de navbar */
-  overflow: hidden;  /* recorta espacio muerto */
+  height: 80px;
+  overflow: hidden;  /* esto es pararecorta espacio muerto */
 }
 
 .logo img {
-  height: 140px;       /* grande a propósito */
+  height: 140px;
   width: auto;
   display: block;
   object-fit: contain;
   transform: translateY(+10px); 
 }
 
-.menu-nav {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 14px;
-  padding: 6px 0;
-  margin: 0;
-}
 
 .menu-nav a {
   font-family: var(--font-body);
@@ -312,8 +341,6 @@ main h2 {
   border: 2px solid rgba(122, 12, 12, 0.15);
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s;
-
-  /* FIX layout */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -331,11 +358,10 @@ main h2 {
   margin-top: 0;
 }
 
-/* FIX imagen */
 .dish-img{
   width: 100%;
-  max-width: 260px;  /* evita que se vuelva gigante */
-  height: 160px;     /* todas iguales */
+  max-width: 260px;
+  height: 160px;
   object-fit: cover; /* recorte bonito */
   border-radius: 14px;
   margin-bottom: 14px;
@@ -408,10 +434,10 @@ footer,
 }
 
 /* ============================
-   NAV TRANSPARENTE SOLO EN INDEX
+   NAV TRANSPARENTE SOLO EN INDEX (para que quede encima del hero)
 ============================ */
 
-/* El nav se posiciona encima del hero */
+/* Para poner nav sobre hero */
 .top-nav.nav-hero {
     position: absolute;
     top: 0;
@@ -421,18 +447,18 @@ footer,
     z-index: 200;
   }
   
-  /* El hero baja su contenido para que no lo tape el nav */
+  /* Bajar contenido de hero para que no tape el nav */
   .top-nav.nav-hero + .hero {
     padding-top: 150px;
   }
   
-  /* Links blancos en modo hero */
+  /* Estas son funcionalidades que hay que especificar para este nav en especifico porque es distinto al resto */
   .top-nav.nav-hero .menu-nav a,
   .top-nav.nav-hero .profile-icon {
     color: var(--blanco);
   }
   
-  /* Hover y activo en modo hero */
+  /* Hover y activo */
   .top-nav.nav-hero .menu-nav a:hover {
     background-color: rgba(255, 200, 61, 0.95);
     color: var(--cafe-oscuro);
@@ -469,6 +495,7 @@ footer,
   max-width: 1100px;
   width: 100%;
   padding: 0 16px;
+  margin: 0 auto;
 }
 
 .role-section{
@@ -541,7 +568,7 @@ footer,
   font-weight: 700;
 }
 
-/* responsive */
+/* esto es para que sea responsive */
 @media (max-width: 900px){
   .role-grid{ grid-template-columns: repeat(2, 1fr); }
 }
