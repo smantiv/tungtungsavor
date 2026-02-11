@@ -487,6 +487,32 @@ footer,
 .top-nav.nav-hero .logo {
   margin-top: 20px; 
 }
+/* =========================
+   FORMULARIO PEDIDO
+========================= */
+
+.plato-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.plato-item select {
+  flex: 2;
+}
+
+.plato-item .cantidad {
+  width: 100px;
+}
+
+.btn-eliminar {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
 
 /* ============================
    ROLE SELECT (rol.html) - AISLADO
