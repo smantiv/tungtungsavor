@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
 
-      // 🔥 Aquí ocultamos la categoría si no tiene resultados
+      
       if (hayResultados) {
         categoria.style.display = "";
       } else {
