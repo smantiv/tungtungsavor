@@ -645,6 +645,48 @@ footer,
   justify-content: center; /* centra horizontalmente */
 }
 
+/* ============================
+   BUSCADOR DE PLATOS (menu.html)
+============================ */
+/* Buscador con lupita */
+.buscador-container{
+  display: flex;
+  justify-content: center; /* centrado */
+  margin: 16px 0 24px;
+  margin-bottom: 80px;
+}
+
+.buscador{
+  position: relative;
+  width: 500px;        
+  max-width: 90%;
+}
+
+.buscador-icon{
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center
+}
+
+.icon-search{
+  width: 18px;
+  height: 18px;
+}
+
+#buscador{
+  width: 100%;
+  padding: 10px 12px 10px 40px; /* espacio para la lupita */
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.15);
+  outline: none;
+}
+
+#buscador:focus{
+  border-color: rgba(0,0,0,0.35);
+}
   
 
   
