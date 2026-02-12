@@ -19,7 +19,7 @@
         
         <!-- PERFIL -->
         <!-- con este codigo insertamos el icono de perfil, no usamos una imagen para que sea fácil cambiar su color si se necesita en el diseño, lo hicimos con apoyo de IA-->
-        <a href="rol.html" class="profile-icon right-side" title="Perfil">
+        <a href="index.html" class="profile-icon right-side" title="Perfil">
           <svg class="icon" viewBox="0 0 24 24">
             <path d="M20 21a8 8 0 1 0-16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -30,7 +30,6 @@
       <ul class="menu-nav">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="menu.html">Menú</a></li>
-        <li><a href="pedido.html">Pedido</a></li>
         <li><a href="reserva.html">Reservas</a></li>
       </ul>
   
@@ -40,7 +39,22 @@
 
     <h2>Nuestros Platos</h2>
     <div class="buscador-container">
-  <input type="text" id="buscador" placeholder="Buscar plato..." />
+      <div class="buscador">
+        <span class="buscador-icon" aria-hidden="true">
+          <!-- Lupita (SVG) -->
+          <svg viewBox="0 0 24 24" class="icon-search">
+            <path
+              d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <input type="text" id="buscador" placeholder="Buscar plato..." />
+       </div>
     </div>
 
     <script src="../Js/menu.js"></script>
