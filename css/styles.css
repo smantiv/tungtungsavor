@@ -1,10 +1,12 @@
 /* ============================
    GOOGLE FONTS — BRAND
+   Importa tipografías desde Google Fonts (solo una vez al inicio)
 ============================ */
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Poppins:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* ============================
    VARIABLES DE MARCA
+   Paleta + tipografías reutilizables con var(--...)
 ============================ */
 :root {
   /* Colores principales */
@@ -24,6 +26,7 @@
 
 /* ============================
    RESET + BODY
+   box-sizing evita problemas de tamaños con padding/border
 ============================ */
 * {
   box-sizing: border-box;
@@ -53,26 +56,30 @@ nav {
   gap: 16px;
 }
 
+/* MODO "CENTRAL": usado en páginas donde el logo va arriba y el menú abajo */
 .nav-container.central {
-  flex-direction: column; /* Apila logo arriba y enlaces abajo */
+  flex-direction: column; /* apila logo arriba y enlaces abajo */
   padding: 20px 16px;
   gap: 10px;
 }
 
+/* Fila del logo: centramos el logo y dejamos el perfil flotando a la derecha */
 .nav-logo-row {
   width: 100%;
   display: flex;
-  justify-content: center; /* Centra el logo */
-  position: relative;     /* Para que el icono de perfil se mueva respecto a esto */
+  justify-content: center; /* centra el logo en la fila */
+  position: relative;      /* CLAVE: permite posicionar el perfil con absolute dentro */
 }
 
+/* Logo grande: el margin-bottom negativo "sube" el menú para que quede más pegado */
 .logo-center img {
-  height: 120px; /* Ajusta el tamaño de logofull.png a tu gusto */
+  height: 120px;
   width: auto;
   display: block;
-  margin-bottom: -30px;
+  margin-bottom: -30px; /* raro pero útil para “compactar” el espacio visual */
 }
 
+/* Menú de links: se reparte en la fila */
 .menu-nav {
   max-width: 1200px;
   list-style: none;
@@ -81,32 +88,35 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 150px;
+  gap: 150px; /* spacing fijo para separar links (puede “romper” en pantallas pequeñas) */
 }
 
+/* Perfil a la derecha (solo cuando tenga right-side) */
 .profile-icon.right-side {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%); /* centrado vertical real */
 }
 
-/* Logo con recorte (por espacio transparente del PNG) */
+/* LOGO recortado (cuando usas logo_main.png con espacio transparente)
+   overflow:hidden recorta el área “muerta” del PNG
+*/
 .logo {
   display: flex;
   align-items: center;
   height: 80px;
-  overflow: hidden;  /* esto es pararecorta espacio muerto */
+  overflow: hidden; /* recorta espacio extra del PNG */
 }
 
+/* Ajuste manual del logo dentro del contenedor recortado */
 .logo img {
   height: 140px;
   width: auto;
   display: block;
   object-fit: contain;
-  transform: translateY(+10px); 
+  transform: translateY(+10px); /* “baja” el logo visualmente */
 }
-
 
 .menu-nav a {
   font-family: var(--font-body);
@@ -128,7 +138,9 @@ nav {
   color: var(--blanco);
 }
 
-/* Ícono de perfil */
+/* ÍCONO DE PERFIL (común para todas las páginas)
+   display:inline-flex centra el SVG como si fuera “botón”
+*/
 .profile-icon {
   color: var(--blanco);
   text-decoration: none;
@@ -145,6 +157,7 @@ nav {
   transform: scale(1.05);
 }
 
+/* Tamaño fijo del SVG para que se vea igual siempre */
 .profile-icon .icon {
   width: 22px;
   height: 22px;
@@ -175,9 +188,10 @@ header p {
 
 /* ============================
    HERO (INDEX)
+   overlay oscuro encima de la imagen para legibilidad del texto
 ============================ */
 .hero {
-  position: relative;
+  position: relative; /* necesario para overlay absoluto */
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -187,14 +201,16 @@ header p {
   background-position: center;
 }
 
+/* Capa oscura encima del fondo (inset: 0 = top/right/bottom/left 0) */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(43, 15, 15, 0.65);
 }
 
+/* Contenido encima del overlay */
 .hero-content {
-  position: relative;
+  position: relative; /* para quedar por encima del overlay */
   max-width: 900px;
   margin: 0 auto;
   color: var(--blanco);
@@ -229,7 +245,7 @@ header p {
   display: flex;
   gap: 14px;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* permite que los botones bajen de línea en pantallas pequeñas */
 }
 
 .btn {
@@ -280,7 +296,7 @@ main h2 {
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive automático */
   gap: 22px;
 }
 
@@ -299,7 +315,7 @@ main h2 {
 
 .card:hover,
 .info-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px); /* efecto “levantar” */
 }
 
 .card h3,
@@ -333,8 +349,9 @@ main h2 {
 
 /* ============================
    DISH CARDS (Platos más vendidos)
+   overflow:hidden evita que la imagen se salga del borde redondeado
 ============================ */
-.dish-card{
+.dish-card {
   background-color: var(--blanco);
   border-radius: 18px;
   padding: 22px;
@@ -345,37 +362,35 @@ main h2 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  overflow: hidden; /* recorta lo que sobresalga (imagen) */
 }
 
-.dish-card:hover{
+.dish-card:hover {
   transform: translateY(-4px);
 }
 
-.dish-card h3{
+.dish-card h3 {
   font-family: var(--font-subtitle);
   color: var(--naranja);
   margin-top: 0;
 }
 
-.dish-img{
+.dish-img {
   width: 100%;
   max-width: 260px;
   height: 160px;
-  object-fit: cover; /* recorte bonito */
+  object-fit: cover; /* recorte bonito sin deformar */
   border-radius: 14px;
   margin-bottom: 14px;
   display: block;
 }
-
-
 
 /* ============================
    FORMULARIOS
 ============================ */
 .formulario {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto; /* centra el formulario */
 }
 
 label {
@@ -429,68 +444,75 @@ footer,
   }
 
   .menu-nav {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* evita que el menú se salga */
   }
 }
 
 /* ============================
-   NAV TRANSPARENTE SOLO EN INDEX (para que quede encima del hero)
+   NAV TRANSPARENTE SOLO EN INDEX
+   Esto hace que el nav quede “flotando” encima del hero
 ============================ */
 
-/* Para poner nav sobre hero */
+/* Nav sobre el hero */
 .top-nav.nav-hero {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: transparent;
-    z-index: 200;
-  }
-  
-  /* Bajar contenido de hero para que no tape el nav */
-  .top-nav.nav-hero + .hero {
-    padding-top: 150px;
-  }
-  
-  /* Estas son funcionalidades que hay que especificar para este nav en especifico porque es distinto al resto */
-  .top-nav.nav-hero .menu-nav a,
-  .top-nav.nav-hero .profile-icon {
-    color: var(--blanco);
-  }
-  
-  /* Hover y activo */
-  .top-nav.nav-hero .menu-nav a:hover {
-    background-color: rgba(255, 200, 61, 0.95);
-    color: var(--cafe-oscuro);
-  }
-  
-  .top-nav.nav-hero .menu-nav a.activo {
-    background-color: rgba(241, 90, 36, 0.95);
-    color: var(--blanco);
-  }
-  
-  /* Logo más grande SOLO en index */
-  .top-nav.nav-hero .logo {
-    height: 68px;
-    overflow: hidden;
-  }
-  
-  .top-nav.nav-hero .logo img {
-    height: 140px;
-  }
-
-.top-nav.nav-hero .logo {
-    margin-top: 8px;   
-  }
-
-  /* Solo index: bajar un poco el logo */
-.top-nav.nav-hero .logo {
-  margin-top: 20px; 
+  position: absolute; /* se sale del flujo normal para superponerse */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  z-index: 200; /* asegura que quede por encima del hero */
 }
+
+/* Selector raro: + aplica estilos al elemento que viene justo después del nav
+   Aquí: cuando hay nav-hero, el hero necesita padding extra para no quedar tapado
+*/
+.top-nav.nav-hero + .hero {
+  padding-top: 150px;
+}
+
+/* Ajustes solo para el nav del index */
+.top-nav.nav-hero .menu-nav a,
+.top-nav.nav-hero .profile-icon {
+  color: var(--blanco);
+}
+
+/* Hover y activo (con opacidad para que se vea sobre la imagen) */
+.top-nav.nav-hero .menu-nav a:hover {
+  background-color: rgba(255, 200, 61, 0.95);
+  color: var(--cafe-oscuro);
+}
+
+.top-nav.nav-hero .menu-nav a.activo {
+  background-color: rgba(241, 90, 36, 0.95);
+  color: var(--blanco);
+}
+
+/* Logo más grande SOLO en index (nav-hero) */
+.top-nav.nav-hero .logo {
+  height: 68px;
+  overflow: hidden;
+}
+
+.top-nav.nav-hero .logo img {
+  height: 140px;
+}
+
+/* Ajustes manuales del logo en index (hay duplicados, pero lo de abajo gana) */
+.top-nav.nav-hero .logo {
+  margin-top: 8px;
+}
+
+/* Solo index: bajar un poco el logo
+   Nota: este sobrescribe el margin-top de 8px porque aparece después
+*/
+.top-nav.nav-hero .logo {
+  margin-top: 20px;
+}
+
 /* =========================
    FORMULARIO PEDIDO
+   Flex para alinear select + cantidad + botón eliminar en una fila
 ========================= */
-
 .plato-item {
   display: flex;
   align-items: center;
@@ -498,16 +520,19 @@ footer,
   margin-bottom: 10px;
 }
 
+/* El select ocupa más espacio que los demás */
 .plato-item select {
   flex: 2;
 }
 
+/* Cantidad con ancho fijo para que no se estire demasiado */
 .plato-item .cantidad {
   width: 100px;
 }
 
+/* Botón eliminar: transparente para que parezca icono */
 .btn-eliminar {
-  margin-left: auto;
+  margin-left: auto; /* empuja el botón al extremo derecho */
   background: transparent;
   border: none;
   font-size: 18px;
@@ -515,21 +540,21 @@ footer,
 }
 
 /* ============================
-   ROLE SELECT (rol.html) - AISLADO
+   ROLE SELECT (rol.html)
 ============================ */
-.role-page{
+.role-page {
   max-width: 1100px;
   width: 100%;
   padding: 0 16px;
   margin: 0 auto;
 }
 
-.role-section{
+.role-section {
   width: 100%;
   text-align: center;
 }
 
-.role-title{
+.role-title {
   font-family: var(--font-display);
   text-align: center;
   color: var(--rojo-oscuro);
@@ -537,19 +562,20 @@ footer,
   font-size: 2.2rem;
 }
 
-.role-subtitle{
+.role-subtitle {
   text-align: center;
   margin: 0 0 26px;
   opacity: 0.75;
 }
 
-.role-grid{
+/* Grid fijo de 4 columnas (desktop) */
+.role-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
 }
 
-.role-card{
+.role-card {
   background: var(--blanco);
   border: 2px solid rgba(122, 12, 12, 0.15);
   border-radius: 18px;
@@ -561,12 +587,12 @@ footer,
   text-align: center;
 }
 
-.role-card:hover{
+.role-card:hover {
   transform: translateY(-4px);
   border-color: rgba(241, 90, 36, 0.45);
 }
 
-.role-icon{
+.role-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -578,13 +604,13 @@ footer,
   margin-bottom: 10px;
 }
 
-.role-card h3{
+.role-card h3 {
   font-family: var(--font-subtitle);
   color: var(--naranja);
   margin: 10px 0 6px;
 }
 
-.role-badge{
+.role-badge {
   display: inline-block;
   margin-top: 14px;
   padding: 8px 14px;
@@ -594,27 +620,30 @@ footer,
   font-weight: 700;
 }
 
-/* esto es para que sea responsive */
-@media (max-width: 900px){
-  .role-grid{ grid-template-columns: repeat(2, 1fr); }
+/* responsive de roles: baja de 4 -> 2 -> 1 columna */
+@media (max-width: 900px) {
+  .role-grid { grid-template-columns: repeat(2, 1fr); }
 }
-@media (max-width: 520px){
-  .role-grid{ grid-template-columns: 1fr; }
+@media (max-width: 520px) {
+  .role-grid { grid-template-columns: 1fr; }
 }
 
-.role-layout{
+/* Layout especial del body en rol.html
+   flex column permite “pegar” footer abajo cuando el contenido es corto
+*/
+.role-layout {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-.role-layout main{
+/* Truco: hacer que el main ocupe el espacio libre y se centre verticalmente */
+.role-layout main {
   flex: 1;                 /* ocupa el espacio entre nav y footer */
   display: flex;
-  align-items: center;     /* CENTRO VERTICAL */
-  justify-content: center
+  align-items: center;     /* centra verticalmente */
+  justify-content: center; /* centra horizontalmente */
 }
-
 
   
 
