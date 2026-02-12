@@ -1,17 +1,30 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const input = document.getElementById("buscador");
-  const cards = document.querySelectorAll(".card");
+document.addEventListener("DOMContentLoaded", () => {
+  const buscador = document.getElementById("buscador");
+  const categorias = document.querySelectorAll(".categoria");
 
-  input.addEventListener("keyup", function () {
-    const textoBusqueda = input.value.toLowerCase();
+  buscador.addEventListener("input", () => {
+    const valor = buscador.value.toLowerCase().trim();
 
-    cards.forEach(card => {
-      const contenido = card.textContent.toLowerCase();
+    categorias.forEach(categoria => {
+      const cards = categoria.querySelectorAll(".card");
+      let hayResultados = false;
 
-      if (contenido.includes(textoBusqueda)) {
-        card.style.display = "block";
+      cards.forEach(card => {
+        const texto = card.textContent.toLowerCase();
+
+        if (texto.includes(valor)) {
+          card.style.display = "";
+          hayResultados = true;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      
+      if (hayResultados) {
+        categoria.style.display = "";
       } else {
-        card.style.display = "none";
+        categoria.style.display = "none";
       }
     });
   });
