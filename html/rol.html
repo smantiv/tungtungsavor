@@ -2,21 +2,27 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <!-- viewport para diseño responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seleccionar usuario - Tung Tung Savor</title>
+  <!-- hoja de estilos principal del proyecto -->
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body class="role-layout">
 
-  <!-- NAV normal (no transparente) -->
+  <!-- NAV -->
+  <!-- barra de navegación estándar (no hero, no transparente) -->
   <nav class="top-nav">
     <div class="nav-container">
 
+      <!-- LOGO -->
+      <!-- redirige al inicio del sitio -->
       <a href="index.html" class="logo">
         <img src="../img/logo_main.png" alt="Tung Tung Savor Logo">
       </a>
 
+      <!-- LINKS PRINCIPALES -->
       <ul class="menu-nav">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="menu.html">Menú</a></li>
@@ -24,23 +30,44 @@
         <li><a href="reserva.html">Reservas</a></li>
       </ul>
 
+      <!-- PERFIL / ADMIN -->
+      <!-- usamos SVG para mantener coherencia visual y permitir cambios de color con CSS -->
       <a href="admin.html" class="profile-icon" title="Administrador">
-        <!-- icono svg simple -->
         <svg class="icon" viewBox="0 0 24 24" fill="none">
-          <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z" stroke="currentColor" stroke-width="2"/>
-          <path d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path
+            d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"
+            stroke="currentColor"
+            stroke-width="2"
+          />
+          <path
+            d="M4 20c1.8-3.5 5-5 8-5s6.2 1.5 8 5"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
         </svg>
       </a>
 
     </div>
   </nav>
 
+  <!-- MAIN -->
+  <!-- página de selección de rol -->
   <main class="role-page">
-    <section class="role-section">
-      <h1 class="role-title">¿Qué tipo de usuario eres?</h1>
-      <p class="muted role-subtitle">Selecciona tu rol para acceder a la interfaz correspondiente.</p>
 
+    <section class="role-section">
+
+      <!-- TÍTULO -->
+      <h1 class="role-title">¿Qué tipo de usuario eres?</h1>
+      <p class="muted role-subtitle">
+        Selecciona tu rol para acceder a la interfaz correspondiente.
+      </p>
+
+      <!-- GRID DE ROLES -->
+      <!-- cada tarjeta representa un tipo de usuario del sistema -->
       <div class="role-grid">
+
+        <!-- CLIENTE -->
         <a class="role-card" href="index.html">
           <span class="role-icon">🍔</span>
           <h3>Cliente</h3>
@@ -48,6 +75,7 @@
           <span class="role-badge">Acceder</span>
         </a>
 
+        <!-- MESERO -->
         <a class="role-card" href="mesero.html">
           <span class="role-icon">🧑‍🍳</span>
           <h3>Mesero</h3>
@@ -55,6 +83,7 @@
           <span class="role-badge">Acceder</span>
         </a>
 
+        <!-- COCINA -->
         <a class="role-card" href="cocina.html">
           <span class="role-icon">🍳</span>
           <h3>Cocina</h3>
@@ -62,16 +91,21 @@
           <span class="role-badge">Acceder</span>
         </a>
 
+        <!-- ADMIN -->
         <a class="role-card" href="admin.html">
           <span class="role-icon">🛠️</span>
           <h3>Admin</h3>
           <p class="muted">Configuración y control del sistema.</p>
           <span class="role-badge">Acceder</span>
         </a>
+
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
+  <!-- pie de página institucional -->
   <footer class="site-footer">
     <p>© 2026 Tung Tung Savor</p>
   </footer>
