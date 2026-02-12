@@ -1,82 +1,136 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservas - TungTung Savor</title>
-    <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8" />
+  <!-- viewport para que el diseño sea responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservas - TungTung Savor</title>
+  <!-- hoja de estilos general del proyecto -->
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
 <body>
 
-    <nav class="top-nav">
-        <div class="nav-container central">
-          
-          <div class="nav-logo-row">
-            <a href="index.html" class="logo-center">
-              <img src="../img/logofull.png" alt="Tung Tung Savor Logo">
-            </a>
-            
-            <a href="rol.html" class="profile-icon right-side" title="Perfil">
-              <svg class="icon" viewBox="0 0 24 24">
-                <path d="M20 21a8 8 0 1 0-16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </a>
-          </div>
+  <!-- NAV -->
+  <nav class="top-nav">
+    <div class="nav-container central">
+      
+      <!-- LOGO + PERFIL -->
+      <div class="nav-logo-row">
 
-          <ul class="menu-nav">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="pedido.html">Pedido</a></li>
-            <li><a href="reserva.html" class="activo">Reservas</a></li>
-          </ul>
-        </div>
-    </nav>
+        <!-- LOGO que redirige al inicio -->
+        <a href="index.html" class="logo-center">
+          <img src="../img/logofull.png" alt="Tung Tung Savor Logo">
+        </a>
 
-    <main class="main-content">
-        <div class="container-small">
-            <h2 class="section-title">Formulario de Reserva</h2>
+        <!-- PERFIL -->
+        <!-- usamos SVG en vez de imagen para poder modificar el color desde CSS fácilmente -->
+        <a href="rol.html" class="profile-icon right-side" title="Perfil">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M20 21a8 8 0 1 0-16 0"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"/>
+            <circle cx="12" cy="8" r="4"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"/>
+          </svg>
+        </a>
+      </div>
 
-            <section class="formulario">
-                <form>
-                    <article class="card">
-                        <label for="nombre">Nombre del cliente:</label>
-                        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+      <!-- LINKS DE NAVEGACIÓN -->
+      <ul class="menu-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="pedido.html">Pedido</a></li>
+        <!-- clase activo indica la página actual -->
+        <li><a href="reserva.html" class="activo">Reservas</a></li>
+      </ul>
+    </div>
+  </nav>
 
-                        <label for="personas">Número de personas:</label>
-                        <input type="number" id="personas" min="1" max="20">
+  <!-- MAIN -->
+  <main class="main-content">
+    
+    <!-- CONTENEDOR CENTRADO -->
+    <div class="container-small">
+      <h2 class="section-title">Formulario de Reserva</h2>
 
-                        <label for="edades">Edades de las personas:</label>
-                        <input type="text" id="edades" placeholder="Ej: 20, 25, 30">
+      <!-- FORMULARIO -->
+      <section class="formulario">
+        <form>
 
-                        <label for="evento">Tipo de evento:</label>
-                        <select id="evento">
-                            <option>Cumpleaños</option>
-                            <option>Evento de trabajo</option>
-                            <option>Evento familiar</option>
-                        </select>
+          <!-- CARD visual para agrupar los campos -->
+          <article class="card">
 
-                        <label for="fecha">Fecha de la reserva:</label>
-                        <input type="date" id="fecha">
+            <!-- NOMBRE -->
+            <label for="nombre">Nombre del cliente:</label>
+            <input 
+              type="text" 
+              id="nombre" 
+              placeholder="Ingrese su nombre"
+            >
 
-                        <label for="hora">Hora:</label>
-                        <input type="time" id="hora">
+            <!-- NÚMERO DE PERSONAS -->
+            <!-- limitamos entre 1 y 20 para evitar valores inválidos -->
+            <label for="personas">Número de personas:</label>
+            <input 
+              type="number" 
+              id="personas" 
+              min="1" 
+              max="20"
+            >
 
-                        <label for="obs">Observaciones:</label>
-                        <textarea id="obs" placeholder="Ej: Mesa cerca a la ventana, decoración especial..."></textarea>
+            <!-- EDADES -->
+            <!-- campo libre donde el usuario puede separar edades por coma -->
+            <label for="edades">Edades de las personas:</label>
+            <input 
+              type="text" 
+              id="edades" 
+              placeholder="Ej: 20, 25, 30"
+            >
 
-                        <button type="submit" class="btn-submit">Reservar Mesa</button>
-                    </article>
-                </form>
-            </section>
-        </div>
-    </main>
+            <!-- TIPO DE EVENTO -->
+            <label for="evento">Tipo de evento:</label>
+            <select id="evento">
+              <option>Cumpleaños</option>
+              <option>Evento de trabajo</option>
+              <option>Evento familiar</option>
+            </select>
 
-    <footer>
-        <p>© 2026 TungTung Savor</p>
-    </footer>
+            <!-- FECHA -->
+            <label for="fecha">Fecha de la reserva:</label>
+            <input type="date" id="fecha">
+
+            <!-- HORA -->
+            <label for="hora">Hora:</label>
+            <input type="time" id="hora">
+
+            <!-- OBSERVACIONES -->
+            <label for="obs">Observaciones:</label>
+            <textarea 
+              id="obs"
+              placeholder="Ej: Mesa cerca a la ventana, decoración especial..."
+            ></textarea>
+
+            <!-- BOTÓN -->
+            <!-- aún no tiene lógica JS, solo estructura visual -->
+            <button type="submit" class="btn-submit">
+              Reservar Mesa
+            </button>
+
+          </article>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 TungTung Savor</p>
+  </footer>
 
 </body>
 </html>
-

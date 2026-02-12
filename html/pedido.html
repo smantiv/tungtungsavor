@@ -2,111 +2,179 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <!-- viewport para diseño responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pedido - TungTung Savor</title>
+  <!-- hoja de estilos general -->
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
 
-<nav class="top-nav">
-  <div class="nav-container central">
-    <div class="nav-logo-row">
-      <a href="index.html" class="logo-center">
-        <img src="../img/logofull.png" alt="Tung Tung Savor Logo">
-      </a>
-      <a href="rol.html" class="profile-icon">👤</a>
+  <!-- NAV -->
+  <nav class="top-nav">
+    <div class="nav-container central">
+
+      <!-- LOGO + PERFIL -->
+      <div class="nav-logo-row">
+
+        <!-- LOGO -->
+        <a href="index.html" class="logo-center">
+          <img src="../img/logofull.png" alt="Tung Tung Savor Logo">
+        </a>
+
+        <!-- PERFIL (mismo SVG que otras páginas) -->
+        <a href="rol.html" class="profile-icon right-side" title="Perfil">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path
+              d="M20 21a8 8 0 1 0-16 0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <circle
+              cx="12"
+              cy="8"
+              r="4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            />
+          </svg>
+        </a>
+
+      </div>
+
+      <!-- LINKS -->
+      <ul class="menu-nav">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="pedido.html" class="activo">Pedido</a></li>
+        <li><a href="reserva.html">Reservas</a></li>
+      </ul>
+
     </div>
+  </nav>
 
-    <ul class="menu-nav">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="menu.html">Menú</a></li>
-      <li><a href="pedido.html" class="activo">Pedido</a></li>
-      <li><a href="reserva.html">Reservas</a></li>
-    </ul>
-  </div>
-</nav>
+  <!-- MAIN -->
+  <main>
 
-<main>
-  <h2 class="section-title">Formulario de Pedido</h2>
+    <h2 class="section-title">Formulario de Pedido</h2>
 
-  <section class="formulario">
-    <form>
-      <article class="card">
+    <section class="formulario">
+      <form>
+        <article class="card">
 
-        <label>Nombre del cliente</label>
-        <input type="text" placeholder="Ingrese su nombre">
+          <label>Nombre del cliente</label>
+          <input type="text" placeholder="Ingrese su nombre">
 
-        <h3>Platos</h3>
-        <div id="lista-platos"></div>
+          <!-- LISTA DINÁMICA DE PLATOS -->
+          <h3>Platos</h3>
+          <div id="lista-platos"></div>
 
-        <button type="button" onclick="agregarPlato()">➕ Agregar plato</button>
-</br>
-</br>
-        <label>Precio total</label>
-        <input type="text" id="precioTotal" value="$0" disabled>
+          <button type="button" onclick="agregarPlato()">➕ Agregar plato</button>
 
-        <label>Observaciones</label>
-        <textarea placeholder="Ej: Sin cebolla, extra salsa..."></textarea>
+          <br>
+          <br>
 
-        <button type="submit">Enviar Pedido</button>
+          <!-- TOTAL -->
+          <label>Precio total</label>
+          <input type="text" id="precioTotal" value="$0" disabled>
 
-      </article>
-    </form>
-  </section>
-</main>
+          <label>Observaciones</label>
+          <textarea placeholder="Ej: Sin cebolla, extra salsa..."></textarea>
 
-<footer>
-  <p>© 2026 TungTung Savor</p>
-</footer>
+          <button type="submit">Enviar Pedido</button>
 
-<script>
-const precios = {
-  "Hamburguesa Especial": 18000,
-  "Pizza Pepperoni": 22000,
-  "Ensalada César": 12000,
-  "Brownie con Helado": 9000,
-  "Arepitas de maíz con hogao": 20000,
-  "Filete de res en salsa de vino tinto": 50000,
-  "Arroz con leche": 8000,
-  "Postre de tres leches": 14000,
-  "Patacones con guacamole y suero costeño": 25000
-};
+        </article>
+      </form>
+    </section>
 
-const listaPlatos = document.getElementById("lista-platos");
-const precioTotal = document.getElementById("precioTotal");
+  </main>
 
-function agregarPlato() {
-  const div = document.createElement("div");
-  div.className = "plato-item";
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 TungTung Savor</p>
+  </footer>
 
-  div.innerHTML = `
-    <select class="plato">
-      <option value="">Seleccione un plato</option>
-      ${Object.keys(precios).map(p => `<option value="${p}">${p}</option>`).join("")}
-    </select>
-    <input type="number" class="cantidad" min="1" placeholder="Cantidad">
-    <button type="button" class="btn-eliminar" onclick="this.parentElement.remove(); calcularTotal()">❌</button>
-  `;
+  <!-- SCRIPT -->
+  <script>
 
-  listaPlatos.appendChild(div);
+    const precios = {
+      "Hamburguesa Especial": 18000,
+      "Pizza Pepperoni": 22000,
+      "Ensalada César": 12000,
+      "Brownie con Helado": 9000,
+      "Arepitas de maíz con hogao": 20000,
+      "Filete de res en salsa de vino tinto": 50000,
+      "Arroz con leche": 8000,
+      "Postre de tres leches": 14000,
+      "Patacones con guacamole y suero costeño": 25000
+    };
 
-  div.querySelectorAll("select, input").forEach(el => {
-    el.addEventListener("change", calcularTotal);
-    el.addEventListener("input", calcularTotal);
-  });
-}
+    const listaPlatos = document.getElementById("lista-platos");
+    const precioTotal = document.getElementById("precioTotal");
 
-function calcularTotal() {
-  let total = 0;
-  document.querySelectorAll(".plato-item").forEach(item => {
-    const plato = item.querySelector(".plato").value;
-    const cantidad = parseInt(item.querySelector(".cantidad").value);
-    if (plato && cantidad) total += precios[plato] * cantidad;
-  });
-  precioTotal.value = "$" + total.toLocaleString("es-CO");
-}
-</script>
+    function agregarPlato() {
+
+      const div = document.createElement("div");
+      div.className = "plato-item";
+
+      const opciones = Object.keys(precios)
+        .map(p => `<option value="${p}">${p}</option>`)
+        .join("");
+
+      div.innerHTML = `
+        <select class="plato">
+          <option value="">Seleccione un plato</option>
+          ${opciones}
+        </select>
+
+        <input
+          type="number"
+          class="cantidad"
+          min="1"
+          placeholder="Cantidad"
+        >
+
+        <button
+          type="button"
+          class="btn-eliminar"
+          onclick="this.parentElement.remove(); calcularTotal()"
+        >
+          ❌
+        </button>
+      `;
+
+      listaPlatos.appendChild(div);
+
+      div.querySelectorAll("select, input").forEach(el => {
+        el.addEventListener("change", calcularTotal);
+        el.addEventListener("input", calcularTotal);
+      });
+    }
+
+    function calcularTotal() {
+
+      let total = 0;
+
+      document.querySelectorAll(".plato-item").forEach(item => {
+
+        const plato = item.querySelector(".plato").value;
+        const cantidad = parseInt(item.querySelector(".cantidad").value, 10);
+
+        if (plato && cantidad) {
+          total += precios[plato] * cantidad;
+        }
+
+      });
+
+      precioTotal.value = "$" + total.toLocaleString("es-CO");
+    }
+
+  </script>
 
 </body>
 </html>
+
