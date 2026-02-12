@@ -1,4 +1,6 @@
-// logica Pedido
+// --------------------
+// LÓGICA PEDIDO
+// --------------------
 const precios = {
   "Hamburguesa Especial": 18000,
   "Pizza Pepperoni": 22000,
@@ -13,7 +15,11 @@ const precios = {
 
 const listaPlatos = document.getElementById("lista-platos");
 const precioTotal = document.getElementById("precioTotal");
+const formPedido = document.getElementById("formPedido");
 
+// --------------------
+// AGREGAR PLATO
+// --------------------
 function agregarPlato() {
   const div = document.createElement("div");
   div.className = "plato-item";
@@ -52,6 +58,9 @@ function agregarPlato() {
   });
 }
 
+// --------------------
+// CALCULAR TOTAL
+// --------------------
 function calcularTotal() {
   let total = 0;
 
@@ -59,10 +68,45 @@ function calcularTotal() {
     const plato = item.querySelector(".plato").value;
     const cantidad = parseInt(item.querySelector(".cantidad").value, 10);
 
-    if (plato && cantidad) {
+    if (plato && cantidad > 0) {
       total += precios[plato] * cantidad;
     }
   });
 
   precioTotal.value = "$" + total.toLocaleString("es-CO");
 }
+
+// --------------------
+// VALIDACIÓN AL ENVIAR
+// --------------------
+formPedido.addEventListener("submit", function (e) {
+  const platos = document.querySelectorAll(".plato-item");
+
+  // 1. Debe haber al menos un plato
+  if (platos.length === 0) {
+    alert("Debe agregar al menos un plato al pedido.");
+    e.preventDefault();
+    return;
+  }
+
+  // 2. Validar selección y cantidad
+  for (let item of platos) {
+    const plato = item.querySelector(".plato").value;
+    const cantidad = parseInt(item.querySelector(".cantidad").value, 10);
+
+    if (!plato) {
+      alert("Debe seleccionar un plato en todos los campos.");
+      e.preventDefault();
+      return;
+    }
+
+    if (!cantidad || cantidad <= 0) {
+      alert("La cantidad de cada plato debe ser mayor a cero.");
+      e.preventDefault();
+      return;
+    }
+  }
+
+  // Si todo está bien
+  alert("Pedido enviado correctamente ✅");
+});
