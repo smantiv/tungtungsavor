@@ -2,136 +2,85 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
+  <!-- viewport para diseño responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Restaurante Tung Tung Savor</title>
+  <title>Seleccionar usuario - Tung Tung Savor</title>
+  <!-- hoja de estilos principal del proyecto -->
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 
-<body>
+<body class="role-layout">
 
-  <!-- NAV prueba -->
-  <nav class="top-nav nav-hero">
+  <!-- NAV -->
+  <!-- barra de navegación estándar (no hero, no transparente) -->
+  <nav class="top-nav">
     <div class="nav-container">
-  
+
       <!-- LOGO -->
-      <a href="index.html" class="logo">
+      <!-- redirige al inicio del sitio -->
+      <a class="logo">
         <img src="../img/logo_main.png" alt="Tung Tung Savor Logo">
       </a>
-  
-      <!-- LINKS -->
-      <ul class="menu-nav">
-        <li><a href="index.html" class="activo">Inicio</a></li>
-        <li><a href="menu.html">Menú</a></li>
-        <li><a href="pedido.html">Pedido</a></li>
-        <li><a href="reserva.html">Reservas</a></li>
-      </ul>
-  
-      <!-- PERFIL -->
-      <!-- con este codigo insertamos el icono de perfil, no usamos una imagen para que sea fácil cambiar su color si se necesita en el diseño, lo hicimos con apoyo de IA-->
-      <a href="rol.html" class="profile-icon" title="Administrador" aria-label="Perfil">
-        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20 21a8 8 0 1 0-16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
-        </svg>
-      </a>
-      
-  
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="hero">
-    <div class="hero-overlay"></div>
+  <!-- MAIN -->
+  <!-- página de selección de rol -->
+  <main class="role-page">
 
-    <div class="hero-content">
-      <p class="hero-kicker">Sabor colombiano, mood moderno</p>
-      <h1>Restaurante Tung Tung Savor</h1>
-      <p class="hero-subtitle">
-        Sabor lleno de brainrot.
+    <section class="role-section">
+
+      <!-- TÍTULO -->
+      <h1 class="role-title">¿Qué tipo de usuario eres?</h1>
+      <p class="muted role-subtitle">
+        Selecciona tu rol para acceder a la interfaz correspondiente.
       </p>
 
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="menu.html">Ver Menú</a>
-        <a class="btn btn-ghost" href="reserva.html">Reservar Mesa</a>
-      </div>
-    </div>
-  </header>
+      <!-- GRID DE ROLES -->
+      <!-- cada tarjeta representa un tipo de usuario del sistema -->
+      <div class="role-grid">
 
-  <!-- MAIN -->
-  <main class="page">
+        <!-- CLIENTE -->
+        <a class="role-card" href="index.html">
+          <span class="role-icon">🍔</span>
+          <h3>Cliente</h3>
+          <p class="muted">Ver menú, hacer pedidos y reservar.</p>
+          <span class="role-badge">Acceder</span>
+        </a>
 
-    <!-- SERVICIOS -->
-    <section class="section">
-      <h2 class="section-title">Nuestros servicios</h2>
+        <!-- MESERO -->
+        <a class="role-card" href="mesero.html">
+          <span class="role-icon">🧑‍🍳</span>
+          <h3>Mesero</h3>
+          <p class="muted">Gestión de mesas y pedidos.</p>
+          <span class="role-badge">Acceder</span>
+        </a>
 
-      <div class="grid-3">
-        <article class="info-card">
-          <h3>Menú digital</h3>
-          <p>Explora platos por categorías con descripción e imágenes.</p>
-          <a class="link" href="menu.html">Ir al menú →</a>
-        </article>
+        <!-- COCINA -->
+        <a class="role-card" href="cocina.html">
+          <span class="role-icon">🍳</span>
+          <h3>Cocina</h3>
+          <p class="muted">Pedidos en preparación y estado.</p>
+          <span class="role-badge">Acceder</span>
+        </a>
 
-        <article class="info-card">
-          <h3>Realizar pedido</h3>
-          <p>Selecciona platos, cantidades y visualiza un total simulado.</p>
-          <a class="link" href="pedido.html">Hacer pedido →</a>
-        </article>
+        <!-- ADMIN -->
+        <a class="role-card" href="admin.html">
+          <span class="role-icon">🛠️</span>
+          <h3>Admin</h3>
+          <p class="muted">Configuración y control del sistema.</p>
+          <span class="role-badge">Acceder</span>
+        </a>
 
-        <article class="info-card">
-          <h3>Reservas</h3>
-          <p>Reserva mesa indicando personas, edades y tipo de evento.</p>
-          <a class="link" href="reserva.html">Reservar →</a>
-        </article>
-      </div>
-    </section>
-
-    <!-- MÁS VENDIDOS -->
-     <!--Estos son ficticios porque aún no está la lógica para determinar los más vendidos-->
-    <section class="section">
-      <h2 class="section-title">Platos más vendidos del día</h2>
-
-      <div class="grid-3">
-        <article class="dish-card">
-          <img 
-            src="../img/hamburguesa.jpg" 
-            alt="Hamburguesa Especial" 
-            class="dish-img"
-          >
-          <h3>Hamburguesa Especial</h3>
-          <p class="muted">Top 1 del día</p>
-          <p class="badge">⭐ #1</p>
-        </article>
-
-        <article class="dish-card">
-          <img 
-            src="../img/patacones.jpg" 
-            alt="Patacones con guacamole" 
-            class="dish-img"
-          >
-          <h3>Patacones con guacamole</h3>
-          <p class="muted">Top 2 del día</p>
-          <p class="badge">🔥 #2</p>
-        </article>
-
-        <article class="dish-card">
-          <img 
-            src="../img/brownieHelado.webp" 
-            alt="Brownie con helado" 
-            class="dish-img"
-          >
-          <h3>Brownie con helado</h3>
-          <p class="muted">Top 3 del día</p>
-          <p class="badge">🍫 #3</p>
-        </article>
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
+  <!-- pie de página institucional -->
   <footer class="site-footer">
-    <p>© 2026 TungTung Savor</p>
-    <p class="muted">Proyecto Académico - Ingeniería de Sistemas</p>
+    <p>© 2026 Tung Tung Savor</p>
   </footer>
 
 </body>
