@@ -1,29 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Codificación de caracteres -->
   <meta charset="UTF-8">
-  <!-- viewport para diseño responsive -->
+
+  <!-- Viewport para diseño responsive en móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título de la pestaña -->
   <title>Pedido - TungTung Savor</title>
-  <!-- hoja de estilos general -->
+
+  <!-- Hoja de estilos principal -->
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
 
-  <!-- NAV -->
+  <!-- =========================
+       BARRA DE NAVEGACIÓN
+  ========================== -->
   <nav class="top-nav">
     <div class="nav-container central">
 
-      <!-- LOGO + PERFIL -->
+      <!-- CONTENEDOR LOGO + PERFIL -->
       <div class="nav-logo-row">
 
-        <!-- LOGO -->
+        <!-- LOGO DE LA MARCA -->
         <a href="index.html" class="logo-center">
           <img src="../img/logofull.png" alt="Tung Tung Savor Logo">
         </a>
 
-        <!-- PERFIL (mismo SVG que otras páginas) -->
+        <!-- ICONO DE PERFIL -->
         <a href="index.html" class="profile-icon right-side" title="Perfil">
           <svg class="icon" viewBox="0 0 24 24">
             <path
@@ -43,36 +50,56 @@
             />
           </svg>
         </a>
+
+      </div>
+    </div>
   </nav>
 
-  <!-- MAIN -->
+  <!-- =========================
+       CONTENIDO PRINCIPAL
+  ========================== -->
   <main>
 
+    <!-- TÍTULO DE LA SECCIÓN -->
     <h2 class="section-title">Formulario de Pedido</h2>
 
+    <!-- SECCIÓN DEL FORMULARIO -->
     <section class="formulario">
+
+      <!-- FORMULARIO DE PEDIDO -->
       <form id="formPedido">
+
+        <!-- TARJETA CONTENEDORA -->
         <article class="card">
 
+          <!-- NOMBRE DEL CLIENTE -->
           <label>Nombre del cliente</label>
           <input type="text" placeholder="Ingrese su nombre">
 
           <!-- LISTA DINÁMICA DE PLATOS -->
           <h3>Platos</h3>
+
+          <!-- Aquí se agregan los platos dinámicamente con JavaScript -->
           <div id="lista-platos"></div>
 
-          <button type="button" onclick="agregarPlato()">➕ Agregar plato</button>
+          <!-- BOTÓN PARA AGREGAR PLATOS -->
+          <button type="button" onclick="agregarPlato()">
+            ➕ Agregar plato
+          </button>
 
-          <br>
-          <br>
+          <br><br>
 
-          <!-- TOTAL -->
+          <!-- PRECIO TOTAL DEL PEDIDO -->
           <label>Precio total</label>
+
+          <!-- Campo deshabilitado, se actualiza con JavaScript -->
           <input type="text" id="precioTotal" value="$0" disabled>
 
+          <!-- OBSERVACIONES DEL CLIENTE -->
           <label>Observaciones</label>
           <textarea placeholder="Ej: Sin cebolla, extra salsa..."></textarea>
 
+          <!-- BOTÓN PARA ENVIAR EL PEDIDO -->
           <button type="submit">Enviar Pedido</button>
 
         </article>
@@ -81,13 +108,18 @@
 
   </main>
 
-  <!-- FOOTER -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
   <footer>
     <p>© 2026 TungTung Savor</p>
   </footer>
 
-  <!-- SCRIPT -->
-<script src="../Js/Pedido.js"></script>
+  <!-- =========================
+       SCRIPT JAVASCRIPT
+       (lógica de platos y validaciones)
+  ========================== -->
+  <script src="../Js/Pedido.js"></script>
 
 </body>
 </html>
