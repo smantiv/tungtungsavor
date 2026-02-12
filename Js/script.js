@@ -108,5 +108,5 @@ formPedido.addEventListener("submit", function (e) {
   }
 
   // Si todo está bien
-  alert("Pedido enviado correctamente ✅");
+  alert("Pedido enviado correctamente");
 });
