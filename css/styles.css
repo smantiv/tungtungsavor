@@ -58,7 +58,8 @@ nav {
 
 /* MODO "CENTRAL": usado en páginas donde el logo va arriba y el menú abajo */
 .nav-container.central {
-  flex-direction: column; /* apila logo arriba y enlaces abajo */
+  flex-direction: column;
+  /* apila logo arriba y enlaces abajo */
   padding: 20px 16px;
   gap: 10px;
 }
@@ -67,8 +68,10 @@ nav {
 .nav-logo-row {
   width: 100%;
   display: flex;
-  justify-content: center; /* centra el logo en la fila */
-  position: relative;      /* CLAVE: permite posicionar el perfil con absolute dentro */
+  justify-content: center;
+  /* centra el logo en la fila */
+  position: relative;
+  /* CLAVE: permite posicionar el perfil con absolute dentro */
 }
 
 /* Logo grande: el margin-bottom negativo "sube" el menú para que quede más pegado */
@@ -76,7 +79,8 @@ nav {
   height: 120px;
   width: auto;
   display: block;
-  margin-bottom: -30px; /* raro pero útil para “compactar” el espacio visual */
+  margin-bottom: -30px;
+  /* raro pero útil para “compactar” el espacio visual */
 }
 
 /* Menú de links: se reparte en la fila */
@@ -88,7 +92,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 150px; /* spacing fijo para separar links (puede “romper” en pantallas pequeñas) */
+  gap: 150px;
+  /* spacing fijo para separar links (puede “romper” en pantallas pequeñas) */
 }
 
 /* Perfil a la derecha (solo cuando tenga right-side) */
@@ -96,7 +101,8 @@ nav {
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-50%); /* centrado vertical real */
+  transform: translateY(-50%);
+  /* centrado vertical real */
 }
 
 /* LOGO recortado (cuando usas logo_main.png con espacio transparente)
@@ -106,7 +112,8 @@ nav {
   display: flex;
   align-items: center;
   height: 80px;
-  overflow: hidden; /* recorta espacio extra del PNG */
+  overflow: hidden;
+  /* recorta espacio extra del PNG */
 }
 
 /* Ajuste manual del logo dentro del contenedor recortado */
@@ -115,7 +122,8 @@ nav {
   width: auto;
   display: block;
   object-fit: contain;
-  transform: translateY(+10px); /* “baja” el logo visualmente */
+  transform: translateY(+10px);
+  /* “baja” el logo visualmente */
 }
 
 .menu-nav a {
@@ -191,7 +199,8 @@ header p {
    overlay oscuro encima de la imagen para legibilidad del texto
 ============================ */
 .hero {
-  position: relative; /* necesario para overlay absoluto */
+  position: relative;
+  /* necesario para overlay absoluto */
   min-height: 70vh;
   display: flex;
   align-items: center;
@@ -210,7 +219,8 @@ header p {
 
 /* Contenido encima del overlay */
 .hero-content {
-  position: relative; /* para quedar por encima del overlay */
+  position: relative;
+  /* para quedar por encima del overlay */
   max-width: 900px;
   margin: 0 auto;
   color: var(--blanco);
@@ -245,7 +255,8 @@ header p {
   display: flex;
   gap: 14px;
   justify-content: center;
-  flex-wrap: wrap; /* permite que los botones bajen de línea en pantallas pequeñas */
+  flex-wrap: wrap;
+  /* permite que los botones bajen de línea en pantallas pequeñas */
 }
 
 .btn {
@@ -296,7 +307,8 @@ main h2 {
 
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive automático */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  /* responsive automático */
   gap: 22px;
 }
 
@@ -315,7 +327,8 @@ main h2 {
 
 .card:hover,
 .info-card:hover {
-  transform: translateY(-4px); /* efecto “levantar” */
+  transform: translateY(-4px);
+  /* efecto “levantar” */
 }
 
 .card h3,
@@ -362,7 +375,8 @@ main h2 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  overflow: hidden; /* recorta lo que sobresalga (imagen) */
+  overflow: hidden;
+  /* recorta lo que sobresalga (imagen) */
 }
 
 .dish-card:hover {
@@ -379,7 +393,8 @@ main h2 {
   width: 100%;
   max-width: 260px;
   height: 160px;
-  object-fit: cover; /* recorte bonito sin deformar */
+  object-fit: cover;
+  /* recorte bonito sin deformar */
   border-radius: 14px;
   margin-bottom: 14px;
   display: block;
@@ -390,7 +405,8 @@ main h2 {
 ============================ */
 .formulario {
   max-width: 600px;
-  margin: 0 auto; /* centra el formulario */
+  margin: 0 auto;
+  /* centra el formulario */
 }
 
 label {
@@ -444,7 +460,8 @@ footer,
   }
 
   .menu-nav {
-    flex-wrap: wrap; /* evita que el menú se salga */
+    flex-wrap: wrap;
+    /* evita que el menú se salga */
   }
 }
 
@@ -455,18 +472,20 @@ footer,
 
 /* Nav sobre el hero */
 .top-nav.nav-hero {
-  position: absolute; /* se sale del flujo normal para superponerse */
+  position: absolute;
+  /* se sale del flujo normal para superponerse */
   top: 0;
   left: 0;
   right: 0;
   background: transparent;
-  z-index: 200; /* asegura que quede por encima del hero */
+  z-index: 200;
+  /* asegura que quede por encima del hero */
 }
 
 /* Selector raro: + aplica estilos al elemento que viene justo después del nav
    Aquí: cuando hay nav-hero, el hero necesita padding extra para no quedar tapado
 */
-.top-nav.nav-hero + .hero {
+.top-nav.nav-hero+.hero {
   padding-top: 150px;
 }
 
@@ -532,7 +551,8 @@ footer,
 
 /* Botón eliminar: transparente para que parezca icono */
 .btn-eliminar {
-  margin-left: auto; /* empuja el botón al extremo derecho */
+  margin-left: auto;
+  /* empuja el botón al extremo derecho */
   background: transparent;
   border: none;
   font-size: 18px;
@@ -582,7 +602,7 @@ footer,
   padding: 22px;
   text-decoration: none;
   color: var(--cafe-oscuro);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
   transition: transform 0.25s, border-color 0.25s;
   text-align: center;
 }
@@ -622,10 +642,15 @@ footer,
 
 /* responsive de roles: baja de 4 -> 2 -> 1 columna */
 @media (max-width: 900px) {
-  .role-grid { grid-template-columns: repeat(2, 1fr); }
+  .role-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
+
 @media (max-width: 520px) {
-  .role-grid { grid-template-columns: 1fr; }
+  .role-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Layout especial del body en rol.html
@@ -639,54 +664,66 @@ footer,
 
 /* Truco: hacer que el main ocupe el espacio libre y se centre verticalmente */
 .role-layout main {
-  flex: 1;                 /* ocupa el espacio entre nav y footer */
+  flex: 1;
+  /* ocupa el espacio entre nav y footer */
   display: flex;
-  align-items: center;     /* centra verticalmente */
-  justify-content: center; /* centra horizontalmente */
+  align-items: center;
+  /* centra verticalmente */
+  justify-content: center;
+  /* centra horizontalmente */
 }
 
 /* ============================
    BUSCADOR DE PLATOS (menu.html)
 ============================ */
 /* Buscador con lupita */
-.buscador-container{
+.buscador-container {
   display: flex;
-  justify-content: center; /* centrado */
+  justify-content: center;
+  /* centrado */
   margin: 16px 0 24px;
   margin-bottom: 80px;
 }
 
-.buscador{
+.buscador {
   position: relative;
-  width: 500px;        
+  width: 500px;
   max-width: 90%;
 }
 
-.buscador-icon{
+.buscador-icon {
   position: absolute;
   left: 12px;
   top: 0;
   bottom: 0;
+  transform: translateY(-21%);
   display: flex;
   align-items: center
 }
 
-.icon-search{
+.icon-search {
   width: 18px;
   height: 18px;
 }
 
-#buscador{
+#buscador {
   width: 100%;
-  padding: 10px 12px 10px 40px; /* espacio para la lupita */
+  padding: 10px 12px 10px 40px;
+  /* espacio para la lupita */
   border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.15);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   outline: none;
 }
 
-#buscador:focus{
-  border-color: rgba(0,0,0,0.35);
+#buscador:focus {
+  border-color: rgba(0, 0, 0, 0.35);
 }
-  
 
-  
+/* Buscador por categoria */
+
+.categoria-filtro {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+} 

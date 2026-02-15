@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <title>Menú - TungTung Savor</title>
@@ -11,28 +12,28 @@
   <!-- Nav si -->
   <nav class="top-nav">
     <div class="nav-container central">
-      
+
       <div class="nav-logo-row">
         <a href="index.html" class="logo-center">
           <img src="../img/logofull.png" alt="Tung Tung Savor Logo">
         </a>
-        
+
         <!-- PERFIL -->
         <!-- con este codigo insertamos el icono de perfil, no usamos una imagen para que sea fácil cambiar su color si se necesita en el diseño, lo hicimos con apoyo de IA-->
         <a href="index.html" class="profile-icon right-side" title="Perfil">
           <svg class="icon" viewBox="0 0 24 24">
-            <path d="M20 21a8 8 0 1 0-16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 21a8 8 0 1 0-16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2" />
           </svg>
         </a>
       </div>
-  
+
       <ul class="menu-nav">
         <li><a href="index.html">Inicio</a></li>
         <li><a href="menu.html">Menú</a></li>
         <li><a href="reserva.html">Reservas</a></li>
       </ul>
-  
+
     </div>
   </nav>
   <main>
@@ -43,35 +44,35 @@
         <span class="buscador-icon" aria-hidden="true">
           <!-- Lupita (SVG) -->
           <svg viewBox="0 0 24 24" class="icon-search">
-            <path
-              d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
+            <path d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </span>
         <input type="text" id="buscador" placeholder="Buscar plato..." />
-       </div>
+      </div>
+        <div class="categoria-filtro">  
+      <select id="categoria">
+        <option value="todas">Todas</option>
+        <option value="entradas">Entradas</option>
+        <option value="plato-fuerte">Plato fuerte</option>
+        <option value="postres">Postres</option>
+      </select>
+      </div>
     </div>
-
-    <script src="../Js/Menu.js"></script>
 
     <!-- ENTRADAS -->
     <section class="categoria">
       <h2>Entradas</h2>
 
       <div class="menu-cards">
-        <article class="card">
+        <article class="card entradas">
           <h3>Ensalada César</h3>
           <p>Lechuga, pollo, crutones y aderezo.</p>
           <p class="precio">$12.000</p>
           <img src="../img/ensaladaCesar.jpg" alt="Ensalada César" width="240" height="180" />
         </article>
 
-        <article class="card">
+        <article class="card entradas">
           <h3>Arepitas de maíz con hogao</h3>
           <p>
             Arepitas doradas por fuera y suaves por dentro, elaboradas con maíz tradicional,
@@ -82,7 +83,7 @@
           <img src="../img/arepitashogao.webp" alt="Arepitas de maíz con hogao" width="240" height="180" />
         </article>
 
-        <article class="card">
+        <article class="card entradas">
           <h3>Patacones con guacamole y suero costeño</h3>
           <p>
             Patacones crujientes, acompañados de guacamole fresco y suero costeño. Un plato
@@ -99,21 +100,21 @@
       <h2>Platos fuertes</h2>
 
       <div class="menu-cards">
-        <article class="card">
+        <article class="card plato-fuerte">
           <h3>Hamburguesa Especial</h3>
           <p>Carne premium, queso, papas y salsa especial.</p>
           <p class="precio">$18.000</p>
           <img src="../img/hamburguesa.jpg" alt="Hamburguesa Especial" width="240" height="180" />
         </article>
 
-        <article class="card">
+        <article class="card plato-fuerte">
           <h3>Pizza Pepperoni</h3>
           <p>Pizza artesanal con pepperoni y queso.</p>
           <p class="precio">$22.000</p>
           <img src="../img/peperoni.webp" alt="Pizza Pepperoni" width="240" height="180" />
         </article>
 
-        <article class="card">
+        <article class="card plato-fuerte">
           <h3>Filete de res en salsa de vino tinto</h3>
           <p>
             Filete de res sellado a la perfección, bañado en una suave salsa de vino tinto con
@@ -131,21 +132,21 @@
       <h2>Postres</h2>
 
       <div class="menu-cards">
-        <article class="card">
+        <article class="card postres">
           <h3>Brownie con Helado</h3>
           <p>Brownie caliente con helado de vainilla.</p>
           <p class="precio">$9.000</p>
           <img src="../img/brownieHelado.webp" alt="Brownie con Helado" width="240" height="180" />
         </article>
 
-        <article class="card">
+        <article class="card postres">
           <h3>Postre de tres leches</h3>
           <p>Postre tradicional colombiano con tres tipos de leche, esponjoso y muy delicioso.</p>
           <p class="precio">$14.000</p>
           <img src="../img/tresleches.jpg" alt="Postre de tres leches" width="240" height="180" />
         </article>
 
-        <article class="card">
+        <article class="card postres">
           <h3>Arroz con leche</h3>
           <p>Arroz cocido con leche, azúcar y canela. Un postre tradicional y muy delicioso.</p>
           <p class="precio">$8.000</p>
@@ -161,7 +162,7 @@
     <p>© 2026 TungTung Savor</p>
     <p>Proyecto Académico - Ingeniería de Sistemas</p>
   </footer>
-
+  <script src="../Js/Menu.js"></script>
 </body>
-</html>
 
+</html>
