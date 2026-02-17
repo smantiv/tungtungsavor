@@ -7,6 +7,7 @@ const formReserva = document.getElementById("formReserva");
 const inputPersonas = document.getElementById("personas");
 const contenedorEdades = document.getElementById("contenedor-edades");
 const inputFecha = document.getElementById("fecha");
+const inputHora = document.getElementById("hora");
 
 // Overlay
 const overlay = document.getElementById("overlay");
@@ -123,6 +124,14 @@ formReserva.addEventListener("submit", function (e) {
 
   if (fechaSeleccionada < hoy) {
     mostrarMensaje("No puedes reservar antes de hoy", "error");
+    return;
+  }
+
+  // Hora
+  const horaReserva = inputHora.value;
+
+  if (horaReserva === "") {
+    mostrarMensaje("Debes seleccionar una hora para la reserva", "error");
     return;
   }
 
