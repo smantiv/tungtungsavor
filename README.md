@@ -135,41 +135,6 @@ const coincideCategoria =
 - Accessible form elements with proper labeling
 - Footer with branding and project attribution
 
-## 📚 Skills Demonstrated
-
-✅ **Frontend Web Development**
-- HTML5 semantic markup
-- CSS3 responsive design patterns
-- Vanilla JavaScript DOM manipulation
-
-✅ **User Interface Design**
-- Multi-role system architecture
-- Intuitive navigation patterns
-- Card-based component design
-- Visual hierarchy and typography
-
-✅ **Code Organization**
-- Modular file structure
-- Separation of concerns (HTML/CSS/JS)
-- Consistent naming conventions
-- Clear code comments for maintainability
-
-✅ **Interactive Features**
-- Real-time search and filtering
-- Dynamic content visibility
-- Event-driven programming
-- State management through DOM
-
-✅ **Professional Development Practices**
-- Responsive design methodology
-- Accessibility considerations (semantic HTML, alt text)
-- Cross-browser compatibility
-- Code scalability
-
-## 🎓 Academic Context
-
-This is a Systems Engineering academic project created in 2026, demonstrating comprehensive frontend development skills in a practical, real-world scenario.
-
 ## 🔮 Future Enhancements
 
 Potential additions for production deployment:
@@ -187,6 +152,6 @@ This project is created for educational purposes.
 
 ---
 
-**Author:** Sebastián Mantilla Villalobos  
+**Authors:** Sofia Mantilla, Isabella Palacio, Juan Manuel Lopez, Samuel Robayo
 **Created:** February 2026  
 **GitHub:** [@smantiv](https://github.com/smantiv)
